@@ -1,0 +1,8 @@
+*.zip
+*.so
+*.pyc
+Eigen/
+eigen-3.3.9/
+*.tar.gz
+build/
+
