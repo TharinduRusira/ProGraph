@@ -1,6 +1,6 @@
 **Requirements**
 
-The only build requirement is the *Eigen* (teted with v3.3.9) library which is a header-only dependency. Please copy the 'Eigen' directory into `include`. The `include_path` 
+The only build requirement is the *Eigen* (tested with v3.3.9) library which is a header-only dependency. Please copy the 'Eigen' directory into `include`. The `include_path` 
 will be resolved  by `cmake`.
 
 https://eigen.tuxfamily.org/index.php?title=Main_Page
