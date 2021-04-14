@@ -4,7 +4,31 @@
 //
 #include "graphsim.hpp"
 
-Eigen::MatrixXd getAdjacencyMatrix();
+typedef std::vector<typename Graph::edge> iEV;
+typedef std::vector<typename Graph::vertex> iVV;
+
+Eigen::MatrixXi getAdjacencyMatrix(Graph G){
+    // traverse edge list and populate the matrix
+    unsigned int n = G.num_vertices();
+    Eigen::MatrixXi adj = MatrixXi::Zero(n, n);
+    iEV edge_list = G.edge_list();
+    for(const auto& e : edge_list){
+        assert(e.first <= n && e.second <= n && "invalid edge detected");
+        if(adj(e.first, e.second)==0)
+            adj(e.first, e.second) = 1;
+    }
+    return adj;
+}
+
+Eigen::MatrixXi getDegreeMatrix(Graph G){
+    unsigned int n = G.num_vertices();
+    Eigen::MatrixXi degree_matrix = MatrixXi::Zero(n, n);
+    for (Graph::const_iterator p = G.begin(); p != G.end(); p++){
+        const Graph::vertex &current_node = Graph::node(p);   
+        degree_matrix(current_node, current_node) = Graph::degree(p);
+    }
+    return degree_matrix;
+}
 
 Eigen::MatrixXd getLaplacianEigenvalues(Eigen::MatrixXd A, Eigen::MatrixXd D){
     assert(A.rows() == A.cols() && "A should be square");

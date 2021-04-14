@@ -1,16 +1,19 @@
 #include <iostream>
-#include<vector>
+#include <vector>
 #include <Eigen/Dense>
 #include <Eigen/Eigenvalues> 
+#include <ngraph.hpp>
 
 using namespace std;
-using Eigen::MatrixXd;
-
+//using Eigen::MatrixXd;
+using namespace Eigen;
+using namespace NGraph;
 
 // return the adjacency matrix of a graph
-// TODO: complete the graph class implementation or use a library like nGraph
-//
-Eigen::MatrixXd getAdjacencyMatrix();
+Eigen::MatrixXi getAdjacencyMatrix(Graph);
+
+// return the degree matrix of a graph
+Eigen::MatrixXi getDegreeMatrix(Graph);
 
 /// compute eigenvalues of the Laplacian
 //  A - adjacency matrix, D - degree matrix

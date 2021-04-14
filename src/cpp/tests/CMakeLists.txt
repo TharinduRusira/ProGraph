@@ -19,7 +19,11 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_executable(graphsim_test test.cpp)
+add_executable(ngraph_test ngraph_test.cpp)
+
 target_link_libraries(graphsim_test PRIVATE graphsim)
+target_link_libraries(ngraph_test PRIVATE graphsim)
+
 
 
 
