@@ -17,7 +17,7 @@ Eigen::MatrixXi getDegreeMatrix(Graph);
 
 /// compute eigenvalues of the Laplacian
 //  A - adjacency matrix, D - degree matrix
-//  return a colum vector of eigenvalues(D-A)
+//  return a column vector of eigenvalues(D-A)
 Eigen::MatrixXd getLaplacianEigenvalues(Eigen::MatrixXd, Eigen::MatrixXd);
 
 /// get the top-k eigen values of each matrix
